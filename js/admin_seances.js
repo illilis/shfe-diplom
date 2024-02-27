@@ -381,7 +381,6 @@ function openSeancePopup(data) {
 
 // Удаление сеанса из таймлайна
 
-let selectTimelines;
 let selectSeances;
 let selectDelete;
 
@@ -389,7 +388,6 @@ let selectedSeance;
 let selectedSeanceId;
 let selectTimeline;
 let selectedHallId;
-let selectedMovieId;
 let selectedMovieName;
 
 let deletedSeances = [];
@@ -397,15 +395,14 @@ let filterDeletedSeances;
 
 function deleteSeance() {
   selectSeances = document.querySelectorAll(".timeline__seances_movie");
-  selectTimelines = document.querySelectorAll(".timeline__seances");
 
   // Определение выбранного сеанса
 
   selectSeances.forEach(seance => {
-    seance.addEventListener("dragstart", (event) => {
+    seance.addEventListener("dragstart", () => {
       selectedSeance = seance;
       selectTimeline = seance.parentElement.parentElement;
-      selectedMovieId = seance.dataset.filmid;
+      selectedMovie = seance.dataset.filmid;
       selectedMovieName = seance.firstElementChild.textContent;
       selectedHallId = seance.parentElement.dataset.id;
       selectDelete = selectTimeline.querySelector(".timeline__delete");
@@ -449,6 +446,8 @@ function deleteSeance() {
           }
           
           selectedSeance.remove();
+
+          // Очищение массива с удаляемыми сеансами от повторов
 
           filterDeletedSeances = deletedSeances.filter((item, index) => {
             return deletedSeances.indexOf(item) === index;
@@ -522,6 +521,8 @@ movieSeancesSave.addEventListener("click", event => {
   location.reload();
 })
 
+// Добавить сеанс на сервер
+
 function addSeances(params) {
   fetch("https://shfe-diplom.neto-server.ru/seance", {
   method: "POST",
@@ -532,6 +533,8 @@ function addSeances(params) {
     console.log(data);
   })
 }
+
+// Удалить сеанс с сервера
 
 function deleteSeances(seanceId) {
   fetch(`https://shfe-diplom.neto-server.ru/seance/${seanceId}`, {

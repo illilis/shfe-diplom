@@ -226,6 +226,8 @@ body {
 }
 
 .movie__poster_image {
+  width: 125px;
+  height: 175px;
   object-fit: cover;
 }
 
@@ -290,6 +292,11 @@ body {
   width: 53px;
   height: 33px;
 
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17px;
+
   justify-content: center;
   align-items: center;
 
@@ -307,13 +314,7 @@ body {
 
 .movie-seances__time_disabled {
   background-color: #C4C4C4;
-}
-
-.movie-seances__time_link {
-  color: #000000;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 17px;
+  cursor: default;
 }
 
 /* hall main */
