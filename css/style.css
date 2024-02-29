@@ -428,24 +428,20 @@ body {
   border-radius: 4px;
 }
 
+.buying__scheme_chair:not(.no-chair, .chair_occupied):hover {
+  box-shadow: 0px 0px 4px #ffffff;
+}
+
 .chair_standart {
   background-color: #FFFFFF;
   border: 1px #525252 solid;
   cursor: pointer;
 }
 
-.buying__scheme_chair + .chair_standart:hover {
-  box-shadow: 0px 0px 4px #ffffff;
-}
-
 .chair_vip {
   background-color: #F9953A;
   border: 1px #525252 solid;
   cursor: pointer;
-}
-
-.buying__scheme_chair + .chair_vip:hover {
-  box-shadow: 0px 0px 4px #ffffff;
 }
 
 .chair_occupied {
@@ -502,6 +498,10 @@ body {
 .buying__button_disabled {
   background-color: #525252;
   cursor: default;
+}
+
+.buying__button_disabled:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.12), 0px 3px 3px 0px rgba(0, 0, 0, 0.24);
 }
 
 /* payment & ticket header */
