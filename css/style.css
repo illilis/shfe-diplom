@@ -621,12 +621,12 @@ body {
 }
 
 .ticket__info-qr {
-  display: block;
+  display: flex;
+  justify-content: center;
 
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
+
 }
 
 /* admin login*/

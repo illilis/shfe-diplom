@@ -8,7 +8,7 @@ const hallInfo = document.querySelector(".ticket__info-hall");
 const timeInfo = document.querySelector(".ticket__info-time");
 const priceInfo = document.querySelector(".ticket__info-price");
 
-let placesNumbers = [];
+let places = [];
 let coast = [];
 let finalSumm;
 
@@ -26,17 +26,15 @@ function getInfo(data) {
   timeInfo.textContent = data.result.seances[seanceIndex].seance_time;
 
   tickets.forEach(ticket => {
-    placesNumbers.push(ticket.place);
+    places.push(ticket.row + "/" + ticket.place);
 
     coast.push(ticket.coast);
   })
 
-  placesInfo.textContent = placesNumbers.join(", ");
-  localStorage.setItem("placesInfo", placesInfo);
+  placesInfo.textContent = places.join(", ");
 
   finalSumm = coast.reduce((acc, price) => acc + price, 0);
   priceInfo.textContent = finalSumm;
-  localStorage.setItem("priceInfo", priceInfo);
 }
 
 // Запрос к серверу (информация по фильму, залу и сеансу)
@@ -67,6 +65,7 @@ ticketButton.addEventListener("click", event => {
         console.log(data); 
         
         if(data.success === true) { 
+          localStorage.setItem("ticketsInfo", JSON.stringify(data));
           document.location="./ticket.html";
         } else {
           alert("Места недоступны для бронирования!");

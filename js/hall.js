@@ -1,6 +1,9 @@
 let seanceId = Number(localStorage.getItem("seanceId"));
 let checkedDate = localStorage.getItem("checkedDate");
 
+const body = document.querySelector("body");
+const buyingInfo = document.querySelector(".buying__info");
+
 const movieTitle = document.querySelector(".buying__info_title");
 const seanceStartTime = document.querySelector(".buying__info-time");
 const hallName = document.querySelector(".buying__info_hall");
@@ -19,6 +22,24 @@ let tickets = [];
 let coast;
 
 const buyingButton = document.querySelector(".buying__button");
+
+// Увеличение экрана при двойном тапе на мобильных устройствах
+
+body.addEventListener("dblclick", () => {
+  if((Number(body.getBoundingClientRect().width)) < 1200) {
+    if(body.getAttribute("transformed") === "false" || !body.hasAttribute("transformed")) {
+      body.style.zoom = "1.5";
+      body.style.transform = "scale(1.5)";
+      body.style.transformOrigin = "0 0";
+      body.setAttribute("transformed", "true")
+    } else if(body.getAttribute("transformed") === "true") {
+      body.style.zoom = "1";
+      body.style.transform = "scale(1)";
+      body.style.transformOrigin = "0 0";
+      body.setAttribute("transformed", "false");
+    }
+  }
+})
 
 // Отображение данных о фильме, сеансе и зале
 
