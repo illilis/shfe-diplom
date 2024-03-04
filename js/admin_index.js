@@ -4,7 +4,7 @@ const popupClose = Array.from(document.querySelectorAll(".popup__close"));
 const popupForms = Array.from(document.querySelectorAll(".popup__form"));
 const popupCancel = Array.from(document.querySelectorAll(".popup__button_cancel"));
 
-// закрытие popup
+// Закрытие popup
 
 popups.forEach(popup => {
   popupClose.forEach(element => {
@@ -12,14 +12,15 @@ popups.forEach(popup => {
       popup.classList.add("popup__hidden");
     })
   })
-})
 
-// кнопка "отменить" в popup
+  // Кнопка "отменить" в popup
 
-popupForms.forEach(form => {
-  popupCancel.forEach(element => {
-    element.addEventListener("click", () => {
-      form.reset();
+  popupForms.forEach(form => {
+    popupCancel.forEach(element => {
+      element.addEventListener("click", () => {
+        form.reset();
+        popup.classList.add("popup__hidden");
+      })
     })
   })
 })

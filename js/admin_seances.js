@@ -94,7 +94,7 @@ function setMovieBackground() {
     moviesInformation.push(movieInfo);
   })
 
-  // Проставляем номер цвета фона в фильмы в таймлайне с сеансами
+  // Проставление номера цвета фона в фильмы в таймлайне с сеансами
 
   timelineMovies = Array.from(document.querySelectorAll(".timeline__seances_movie"));
 
@@ -214,25 +214,25 @@ function openSeancePopup(data) {
 
       // Кнопка "Отменить" в popup "Добавление сеанса"
 
-      seanceCancelButton = document.querySelector(".popup__add-seance_button_cancel");
+      // seanceCancelButton = document.querySelector(".popup__add-seance_button_cancel");
 
-      seanceCancelButton.addEventListener("click", () => {
-        optionHallName.forEach(hallName => {
-          hallName.removeAttribute("selected");
+      // seanceCancelButton.addEventListener("click", () => {
+      //   optionHallName.forEach(hallName => {
+      //     hallName.removeAttribute("selected");
 
-          if(hallName.textContent === "Название зала") {
-            hallName.setAttribute("selected", "true");
-          }
-        })
+      //     if(hallName.textContent === "Название зала") {
+      //       hallName.setAttribute("selected", "true");
+      //     }
+      //   })
 
-        optionMovieName.forEach(movieName => {
-          movieName.removeAttribute("selected");
+      //   optionMovieName.forEach(movieName => {
+      //     movieName.removeAttribute("selected");
 
-          if(movieName.textContent === "Название фильма") {
-            movieName.setAttribute("selected", "true");
-          }
-        })
-      })
+      //     if(movieName.textContent === "Название фильма") {
+      //       movieName.setAttribute("selected", "true");
+      //     }
+      //   })
+      // })
 
       // Кнопка "Добавить сеанс" в popup "Добавление сеанса"
 

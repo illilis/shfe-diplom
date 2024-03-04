@@ -1089,6 +1089,17 @@ body {
   padding: 12px 32px;
 }
 
+.button_disabled {
+  color: #FFFFFF;
+  background-color: #525252;
+  cursor: default;
+}
+
+.button_disabled:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.12), 0px 3px 3px 0px rgba(0, 0, 0, 0.24);
+}
+
+
 /* admin prices config */
 
 .price-config__legend {
