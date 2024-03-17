@@ -779,17 +779,6 @@ body {
   left: 20px;
 }
 
-.admin__header::after {
-  content: "";
-  background: url(../images/arrow.png);
-  width: 24px;
-  height: 16px;
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background-repeat: no-repeat;
-}
-
 .admin__header_text {
   color: #FFFFFF;
   
@@ -802,6 +791,20 @@ body {
   margin-left: 67px;
 }
 
+.admin__header_arrow {
+  width: 24px;
+  height: 16px;
+  position: absolute;
+  top: 40px;
+  right: 42px;
+
+  cursor: pointer;
+}
+
+.admin__header_arrow-hide {
+  transform: rotate(180deg);
+}
+
 .admin__wrapper {
   padding-top: 35px;
   padding-left: 31px;
@@ -809,6 +812,10 @@ body {
 
   display: flex;
   flex-direction: column;
+}
+
+.admin__wrapper-hide {
+  display: none;
 }
 
 .admin__info {
@@ -1272,12 +1279,9 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  min-width: 60px;
-  max-width: 80px;
   height: 40px;
 
   padding: 10px;
-
   border: 1px solid rgba(0, 0, 0, 0.30);
 
   position: absolute;

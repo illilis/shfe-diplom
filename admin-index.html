@@ -18,6 +18,7 @@
       <section class="admin__section halls">
         <div class="admin__header">
           <h2 class="admin__header_text admin__header_text-first">Управление залами</h2>
+          <img src="./images/arrow.png" alt="Скрыть/раскрыть раздел" class="admin__header_arrow">
         </div>
 
         <div class="admin__wrapper">
@@ -36,6 +37,7 @@
       <section class="admin__section hall-config">
         <div class="admin__header">
           <h2 class="admin__header_text">Конфигурация залов</h2>
+          <img src="./images/arrow.png" alt="Скрыть/раскрыть раздел" class="admin__header_arrow">
         </div>
 
         <div class="admin__wrapper">
@@ -106,6 +108,7 @@
       <section class="admin__section price-config">
         <div class="admin__header">
           <h2 class="admin__header_text">Конфигурация цен</h2>
+          <img src="./images/arrow.png" alt="Скрыть/раскрыть раздел" class="admin__header_arrow">
         </div>
 
         <div class="admin__wrapper">
@@ -151,6 +154,7 @@
       <section class="admin__section movie-seances">
         <div class="admin__header">
           <h2 class="admin__header_text">Сетка сеансов</h2>
+          <img src="./images/arrow.png" alt="Скрыть/раскрыть раздел" class="admin__header_arrow">
         </div>
 
         <div class="admin__wrapper">
@@ -223,8 +227,8 @@
           </div>
 
           <div class="movie-seances__buttons">
-            <button class="admin__button_cancel movie-seances__batton_cancel button" type="reset">Отмена</button>
-            <button class="admin__button_save movie-seances__batton_save button">Сохранить</button>
+            <button class="admin__button_cancel movie-seances__batton_cancel button_disabled button" type="reset">Отмена</button>
+            <button class="admin__button_save movie-seances__batton_save button_disabled button">Сохранить</button>
           </div>
 
         </div>
@@ -233,6 +237,7 @@
       <section class="admin__section open">
         <div class="admin__header">
           <h2 class="admin__header_text admin__header_text-last">Открыть продажи</h2>
+          <img src="./images/arrow.png" alt="Скрыть/раскрыть раздел" class="admin__header_arrow">
         </div>
 
         <div class="admin__wrapper admin__wrapper-last">
@@ -351,7 +356,7 @@
         <label class="admin_label add-seance_label">
           Название зала
           <select class="select__add-seance select__add-seance_hall">
-            <option class="option_add-seance hall__name">Название зала</option>
+            <!-- <option class="option_add-seance hall__name">Название зала</option> -->
             <!-- <option class="option_add-seance hall__name" data-id="58">Зал 1</option>
             <option class="option_add-seance hall__name" data-id="78">Зал 2</option> -->
           </select>
@@ -360,7 +365,7 @@
         <label class="admin_label add-seance_label">
           Название фильма
           <select class="select__add-seance select__add-seance_movie">
-            <option class="option_add-seance movie__name">Название фильма</option>
+            <!-- <option class="option_add-seance movie__name">Название фильма</option> -->
             <!-- <option class="option_add-seance movie__name" data-id="141">Звёздные войны XXIII: Атака клонированных клонов</option>
             <option class="option_add-seance movie__name" data-id="142">Миссия выполнима</option> -->
           </select>
@@ -405,9 +410,10 @@
    
     </div>
 
+  <script src="./js/admin_index.js"></script>  
   <script src="./js/admin_halls.js"></script>
   <script src="./js/admin_movies.js"></script>
   <script src="./js/admin_seances.js"></script>
-  <script src="./js/admin_index.js"></script>  
+
 </body>
 </html>

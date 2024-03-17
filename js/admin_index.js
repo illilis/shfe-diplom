@@ -1,3 +1,19 @@
+// Стрелки скрытия/раскрытия разделов
+
+const headerArrow = document.querySelectorAll(".admin__header_arrow");
+
+// Скрытие/раскрытие разделов
+
+headerArrow.forEach(arrow => {
+  arrow.addEventListener("click", () => {
+    let headerElement = arrow.closest(".admin__header");
+    let adminWrapper = headerElement.nextElementSibling;
+
+    arrow.classList.toggle("admin__header_arrow-hide");
+    adminWrapper.classList.toggle("admin__wrapper-hide");
+  })
+})
+
 // popups
 const popups = Array.from(document.querySelectorAll(".popup"));
 const popupClose = Array.from(document.querySelectorAll(".popup__close"));
