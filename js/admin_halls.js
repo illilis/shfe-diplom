@@ -358,7 +358,6 @@ function openCloseHall(currentOpen, hallNewStatus) {
   .then(function(data) { 
     console.log(data);
     alert("Статус зала изменен!");
-    checkHallOpen(data, currentOpen);
   })
 }
 
@@ -596,20 +595,36 @@ function hallsOperations(data) {
       }
 
       checkHallOpen(data, currentOpen);
-
-      // Клик по кнопке в блоке "Открыть продажи"
-
-      openButton.addEventListener("click", event => {
-        if(openButton.classList.contains("button_disabled")) {
-          event.preventDefault();
-        } else {
-          event.preventDefault();
-
-          openCloseHall(currentOpen, hallNewStatus);
-        }
-      })
     })
   }) 
+
+  // Клик по кнопке в блоке "Открыть продажи"
+
+  openButton.addEventListener("click", event => {
+    if(openButton.classList.contains("button_disabled")) {
+      event.preventDefault();
+    } else {
+      event.preventDefault();
+
+      openCloseHall(currentOpen, hallNewStatus);
+
+      for(let i = 0; i < data.result.halls.length; i++) {
+        if(data.result.halls[i].id === Number(currentOpen)) {
+          hallCurrentStatus = data.result.halls[i].hall_open;
+        }
+      }
+    
+      if (hallNewStatus === 0) {
+        openButton.textContent = "Открыть продажу билетов";
+        openInfo.textContent = "Всё готово к открытию";
+        hallNewStatus = 1;
+      } else {
+        openButton.textContent = "Приостановить продажу билетов";
+        openInfo.textContent = "Зал открыт";
+        hallNewStatus = 0;
+      }
+    }
+  })
 
   // Удалить зал
 
